@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: postgres:15  # Use the desired PostgreSQL version
+    container_name: postgres_dotnet
+    restart: always
+    environment:
+      POSTGRES_USER: ${USERS_DB_USER}
+      POSTGRES_PASSWORD: ${USERS_DB_PASSWORD}  # Replace with your database password
+      POSTGRES_DB: ${USERS_DB_NAME}  # Replace with your database name
+    ports:
+      - ${USERS_DB_PORT}:${USERS_DB_PORT}
+    volumes:
+      - postgres_data_dotnet:/var/lib/postgresql/data  # Persistent storage
+
+volumes:
+  postgres_data_dotnet:
+    driver: local
