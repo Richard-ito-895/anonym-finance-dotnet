@@ -1,0 +1,6 @@
+@AnonymFinanceAPI_HostAddress = http://localhost:5017
+
+GET {{AnonymFinanceAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
