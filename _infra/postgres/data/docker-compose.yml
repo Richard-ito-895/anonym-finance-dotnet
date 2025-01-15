@@ -4,11 +4,11 @@ services:
     container_name: postgres_dotnet
     restart: always
     environment:
-      POSTGRES_USER: ${USERS_DB_USER}
-      POSTGRES_PASSWORD: ${USERS_DB_PASSWORD}  # Replace with your database password
-      POSTGRES_DB: ${USERS_DB_NAME}  # Replace with your database name
+      POSTGRES_USER: ${FINANCE_DB_USER}
+      POSTGRES_PASSWORD: ${FINANCE_DB_PASSWORD}  # Replace with your database password
+      POSTGRES_DB: ${FINANCE_DB_NAME}  # Replace with your database name
     ports:
-      - ${USERS_DB_PORT}:${USERS_DB_PORT}
+      - ${FINANCE_DB_PORT}:5432
     volumes:
       - postgres_data_dotnet:/var/lib/postgresql/data  # Persistent storage
 
